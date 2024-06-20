@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Code_01 {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    String[] choices = {"가위", "바위", "보"};
+
+    System.out.println("가위(1), 바위(2), 보(3) 중 하나를 선택하세요  : ");
+    int userChoice = scanner.nextInt();
+
+    if (userChoice < 1 || userChoice >3) {
+      System.out.println("잘못된 입력입니다.");
+      return;
+    }
+
+    int computerChoice = (int) (Math.random() * 3);
+
+    System.out.println("당신의 선택 : " + choices[userChoice - 1]);
+    System.out.println("컴퓨터의 선택 : " + choices[computerChoice]);
+
+    if (userChoice - 1 == computerChoice){
+      System.out.println("비겼습니다.!");
+    } else if ((userChoice == 1 && computerChoice == 2) ||
+              ((userChoice == 2 && computerChoice == 0) ||
+              ((userChoice == 0 && computerChoice == 1) {
+        System.out.println("컴퓨터가 이겼습니다.!");
+    } else {
+        System.out.println("당신이 이겼습니다.!");
+    }
+    scanner.close();
+  }
+}
